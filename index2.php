@@ -37,6 +37,7 @@
         <li><a href="./array/test01.php">成績表</a></li>
         <li><a href="./select/test01.php">成績判斷</a></li>
         <li><a href="./select/test02.php">年份判斷</a></li>
+        <li><a href="./string/index.php">字串處理</a></li>
     </ul>
 </body>
 </html>
