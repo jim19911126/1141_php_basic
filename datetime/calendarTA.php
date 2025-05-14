@@ -41,6 +41,14 @@
             /* background-color:lightgray; */
             color:#aaa;
         }
+        .date-num{
+            font-size:14px;
+            text-align:left;
+        }
+        .date-event{
+            
+            height:40px;
+        }
     </style>
 </head>
 <body>
@@ -51,6 +59,13 @@ $today = date("Y-m-d");
 $firstDay = date("Y-m-01");
 $firstDayWeek = date("w", strtotime($firstDay));
 $theDaysOfMonth=date("t", strtotime($firstDay));
+
+
+$spDate=[
+    '2025-05-11'=>'母親節',
+    '2025-05-01'=>'勞動節',
+    '2025-05-30'=>'端午節'
+];
 
 ?>
 <h2 style='text-align:center;'><?=date("Y 年 m 月"); ?></h2>
@@ -90,7 +105,14 @@ for($i=0;$i<6;$i++){
             $class=$class . " pass-date";
         }
         echo "<td class='$class' data-date='$date'>";
-            echo date("d",$timestamp);
+            echo "<div class='date-num'>";
+                echo date("d",$timestamp);
+            echo "</div>";
+            echo "<div class='date-event'>";
+                if(isset($spDate[$date])){
+                    echo $spDate[$date];
+                }
+            echo "</div>";
         echo "</td>";
     }
 
